@@ -1,7 +1,7 @@
-from dictwax import *
+from drs import *
 import json
 
-from dictwax.waxes import DictBodyShop
+from drs import DictRepairShop
 
 source = {
         "a":      1,
@@ -42,14 +42,14 @@ print('-' * 50)
 print('WipeOff Class'.center(50))
 print('-' * 50)
 
-DictBodyShop(source).wipe([100])
+DictRepairShop(source).wipe([100])
 print(json.dumps(source, indent=4))
 
 print('-' * 50)
 print('Replacement'.center(50))
 print('-' * 50)
 
-DictBodyShop(source).replace({4: 40, 3: 30, 8: 80, 9: 90})
+DictRepairShop(source).replace({4: 40, 3: 30, 8: 80, 9: 90})
 print(json.dumps(source, indent=4))
 
 print('-' * 50)
@@ -58,6 +58,6 @@ print('-' * 50)
 #
 
 
-DictBodyShop(waxed_dict).wax_off()
+DictRepairShop(waxed_dict).wax_off()
 print(json.dumps(waxed_dict, indent=4))
 

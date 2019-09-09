@@ -21,7 +21,7 @@ class WaxOn:
         self.wax = wax
 
 
-class DictBodyShop:
+class DictRepairShop:
 
     def __init__(self, source):
         self.source = source
