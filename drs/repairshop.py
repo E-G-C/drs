@@ -27,7 +27,6 @@ class DictRepairShop:
         self.source = source
         self.dirt = None
         self.replacement = None
-        pass
 
     def wax_off(self):
         # self.dirt = dirt
@@ -47,7 +46,9 @@ class DictRepairShop:
     def _search_for_wax(self, action, value):
         if isinstance(value, dict):
             for k in list(value.keys()):
-                if isinstance(value[k], dict) or isinstance(value[k], list):
+                if self.dirt and value[k] in self.dirt:  # when a list (or dict?) is specified as dirt
+                    action(k, value)
+                elif isinstance(value[k], dict) or isinstance(value[k], list):
                     self._search_for_wax(action, value[k])
                 else:
                     action(k, value)
